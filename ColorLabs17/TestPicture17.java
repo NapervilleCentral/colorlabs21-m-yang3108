@@ -32,6 +32,7 @@ public class TestPicture17
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
      Picture ferris2 = new Picture("images/2000 ferris wheel2.jpg");
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
+     Picture somepic = new Picture("images/2000 blue-mark.jpg");
 
      //apic.explore();
      ferris1.explore();
