@@ -1,0 +1,228 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files\BlueJ\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+11
+-classpath
+C:\Program Files\BlueJ\lib\bluejcore.jar;C:\Program Files\BlueJ\lib\junit-4.11.jar;C:\Program Files\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files\BlueJ\lib\lang-stride.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.base.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.controls.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.fxml.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.graphics.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.media.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.properties.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.swing.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.web.jar;C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\+libs\mediaComp.jar;C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17
+-d
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\Pixel.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\Pixel.java...
+Constructing Javadoc information...
+Standard Doclet version 11.0.2
+Building tree for all the packages and classes...
+Generating C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\doc\bookClasses\Pixel.html...
+Generating C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\doc\bookClasses\package-summary.html...
+Generating C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\doc\constant-values.html...
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\World.java:17: error: cannot access ModelDisplay
+public class World extends JComponent implements ModelDisplay
+                                                 ^
+  bad source file: C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\ModelDisplay.java
+    file does not contain class bookClasses.ModelDisplay
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\Turtle.java:14: error: cannot access SimpleTurtle
+public class Turtle extends SimpleTurtle
+                            ^
+  bad source file: C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\SimpleTurtle.java
+    file does not contain class bookClasses.SimpleTurtle
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\World.java:40: error: cannot access Picture
+  private Picture picture = null;
+          ^
+  bad source file: C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\Picture.java
+    file does not contain class bookClasses.Picture
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\VideoCapturer.java:42: error: cannot access FrameSequencer
+  public FrameSequencer getFrameSequencer();
+         ^
+  bad source file: C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\FrameSequencer.java
+    file does not contain class bookClasses.FrameSequencer
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\SoundExplorer.java:43: error: cannot access SimpleSound
+  private SimpleSound sound;
+          ^
+  bad source file: C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\SimpleSound.java
+    file does not contain class bookClasses.SimpleSound
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\SimplePicture.java:43: error: cannot access PictureFrame
+  private PictureFrame pictureFrame;
+          ^
+  bad source file: C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\PictureFrame.java
+    file does not contain class bookClasses.PictureFrame
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\MovieWriter.java:7: error: package ch.randelshofer.media.avi does not exist
+import ch.randelshofer.media.avi.AVIOutputStream;
+                                ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\MoviePlayer.java:23: error: cannot access AnimationPanel
+  private AnimationPanel animationPanel = null;
+          ^
+  bad source file: C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\AnimationPanel.java
+    file does not contain class bookClasses.AnimationPanel
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:38: error: package javax.media.protocol does not exist
+import javax.media.protocol.DataSource;
+                           ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:40: error: package javax.media.format does not exist
+import javax.media.format.VideoFormat;
+                         ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:51: error: cannot find symbol
+public class JpegImagesToMovie implements ControllerListener, 
+                                          ^
+  symbol: class ControllerListener
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:52: error: cannot find symbol
+  DataSinkListener {
+  ^
+  symbol: class DataSinkListener
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:68: error: cannot find symbol
+                               MediaLocator outML) {
+                               ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:120: error: cannot find symbol
+                         MediaLocator outML) {
+                         ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:137: error: cannot find symbol
+                      MediaLocator outML,
+                      ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:233: error: cannot find symbol
+                      MediaLocator outML,
+                      ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:323: error: cannot find symbol
+  DataSink createDataSink(Processor p, MediaLocator outML) {
+                          ^
+  symbol:   class Processor
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:323: error: cannot find symbol
+  DataSink createDataSink(Processor p, MediaLocator outML) {
+                                       ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:323: error: cannot find symbol
+  DataSink createDataSink(Processor p, MediaLocator outML) {
+  ^
+  symbol:   class DataSink
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:354: error: cannot find symbol
+  boolean waitForState(Processor p, int state) {
+                       ^
+  symbol:   class Processor
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:368: error: cannot find symbol
+  public void controllerUpdate(ControllerEvent evt) {
+                               ^
+  symbol:   class ControllerEvent
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:410: error: cannot find symbol
+  public void dataSinkUpdate(DataSinkEvent evt) {
+                             ^
+  symbol:   class DataSinkEvent
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:506: error: cannot find symbol
+  static MediaLocator createMediaLocator(String url) {
+         ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:35: error: package javax.media does not exist
+import javax.media.*;
+^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:36: error: package javax.media.control does not exist
+import javax.media.control.*;
+^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:37: error: package javax.media.protocol does not exist
+import javax.media.protocol.*;
+^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:39: error: package javax.media.datasink does not exist
+import javax.media.datasink.*;
+^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:537: error: cannot find symbol
+  class ImageDataSource extends PullBufferDataSource {
+                                ^
+  symbol:   class PullBufferDataSource
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:604: error: cannot find symbol
+  class ImageSourceStream implements PullBufferStream {
+                                     ^
+  symbol:   class PullBufferStream
+  location: class JpegImagesToMovie
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:548: error: cannot find symbol
+    public void setLocator(MediaLocator source) {
+                           ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:551: error: cannot find symbol
+    public MediaLocator getLocator() {
+           ^
+  symbol:   class MediaLocator
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:578: error: cannot find symbol
+    public PullBufferStream[] getStreams() {
+           ^
+  symbol:   class PullBufferStream
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:587: error: cannot find symbol
+    public Time getDuration() {
+           ^
+  symbol:   class Time
+  location: class JpegImagesToMovie.ImageDataSource
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:608: error: cannot find symbol
+    VideoFormat format;
+    ^
+  symbol:   class VideoFormat
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:639: error: cannot find symbol
+    public void read(Buffer buf) throws IOException {
+                     ^
+  symbol:   class Buffer
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:693: error: cannot find symbol
+    public Format getFormat() {
+           ^
+  symbol:   class Format
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\JpegImagesToMovie.java:697: error: cannot find symbol
+    public ContentDescriptor getContentDescriptor() {
+           ^
+  symbol:   class ContentDescriptor
+  location: class JpegImagesToMovie.ImageSourceStream
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\APicture2.java:26: error: invalid method declaration; return type required
+  public APicture2 ()
+         ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\APicture2.java:38: error: invalid method declaration; return type required
+  public APicture2(String fileName)
+         ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\APicture2.java:49: error: invalid method declaration; return type required
+  public APicture2(int width, int height)
+         ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\APicture2.java:59: error: invalid method declaration; return type required
+  public APicture2(Picture copyPicture)
+         ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\APicture2.java:69: error: invalid method declaration; return type required
+  public APicture2(BufferedImage image)
+         ^
+C:\Users\mryang\Desktop\APCS2021\colorlabs21-m-yang3108\ColorLabs17\bookClasses\APicture2.java:19: error: class Picture is public, should be declared in a file named Picture.java
+public class Picture extends SimplePicture
+       ^
+javadoc: error - An internal exception has occurred. 
+	(java.lang.AssertionError)
+44 errors

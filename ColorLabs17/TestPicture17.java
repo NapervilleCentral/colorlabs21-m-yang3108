@@ -19,14 +19,17 @@ public class TestPicture17
   public static void main(String[] args)
   {
       //opens picture using a dialog box
-      /**/
+      /*
      String fileName = FileChooser.pickAFile();
      Picture pictObj = new Picture(fileName);
-     pictObj.explore();
+///     pictObj.explore();
 
      //opens a pictue using a path
      //Picture apic = new Picture("C:\\Users\\khayes\\Favorites\\Documents\APCS- Java\chap03\Curriclum 2013\Picture Color labs\images\\beach.jpg");
-     
+    
+     /*
+      * 
+      */
      //relative path
      Picture apic = new Picture("images\\beach.jpg");
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
@@ -35,8 +38,8 @@ public class TestPicture17
      Picture somepic = new Picture("images/2000 blue-mark.jpg");
 
      //apic.explore();
-     ferris1.explore();
-     
+     //ferris1.explore();
+     */
      //makes an array of pixels
      Pixel[] pixels;
      //gets pixels from picture and assigns to pixels array
@@ -46,11 +49,11 @@ public class TestPicture17
     System.out.println("This is a large array"+pixels.length  );
 
 
-    /**/
+    /*
         //access each index
     System.out.println(pixels[17]);
     //access each pixel
-    Pixel spot = ferris1.getPixel(100,100);
+    //Pixel spot = ferris1.getPixel(100,100);
     
     System.out.println(pixels[17].getColor());
     System.out.println(spot);
@@ -60,13 +63,37 @@ public class TestPicture17
     pixels[500034].setColor(Color.blue);
 
     ferris1.explore();
-/*
+/**/
    // loop to access indexes of array or collection
 
     //for each loop spot  is a ?
+    int count = 0;
     for (Pixel spot : pixels)
-    System.out.println( spot );
-
+    {
+        int g = spot.getGreen();
+        spot.setGreen((int)(g*0.1));
+        int r = spot.getRed();
+        spot.setRed((int)Math.random()*r+10);
+        
+        
+        
+        /*
+        if (count%10 == 0)
+        {
+            spot.setColor(Color.green);
+        }
+        */
+            count++;
+        }
+        
+        
+        
+        
+        pixels = ferris2.getPixels();
+        for (Pixel pixelObj
+        
+        
+ferris2.explore();
 
    
  /**/
@@ -115,7 +142,48 @@ final double  FACTOR = .5;
 
   /**/ 
     //write/save a picture as a file
-    ferris1.write("images/ferris11.jpg");
+    //ferris1.write("images/ferris11.jpg");
+  Picture Katie = new Picture("images/KatieFancy.jpg");
+        Katie.explore();
+        
+        Pixel[] pixels;
+        
+        pixels = Katie.getPixels();
+        
+
+        
+        for (Pixel spot : pixels) 
+        {
+            int r = spot.getRed();
+            int b = spot.getBlue();
+            int g = spot.getGreen();
+            
+            
+            
+            if ((r<155 && r>135) && (g<150 && g>115) && (b<145 && b>115)) {
+                spot.setColor (new Color(224, 176, 255));
+            }
+            
+            
+            
+            
+            
+        }
+        
+        Katie.explore();
+    /**
+     * method to change the picture to grayscale
+     * Gray is a rgb value are all the same
+     * how would we pick an appropriate number?
+     */
+    
+    
+    
+    
+    
+    
+    
+     */
 
     /**/
   }//main
