@@ -142,5 +142,36 @@ public class ColorLab
 }
    swan.explore();
    
+   
+       swan = new Picture("images/swan.jpg");
+        pixels = swan.getPixels();
+        
+        for (Pixel spot : pixels)
+        {
+            int r = spot.getRed();
+            int g = spot.getGreen();
+            int b = spot.getBlue();
+           
+            spot.setColor(new Color(g, r, b));
+    
+    
+}
+   swan.explore();
+       
+   swan = new Picture("images/swan.jpg");
+        pixels = swan.getPixels();
+        
+        for (Pixel spot : pixels)
+        {
+            int r = spot.getRed();
+            int g = spot.getGreen();
+            int b = spot.getBlue();
+
+            spot.setColor(new Color(b, g, r));
+    
+    
+    
+}
+   swan.explore();
 }
 }

@@ -1,9 +1,10 @@
-
+import java.awt.*;
+import java.util.*;
 /**
  * Write a description of class SheparFaireyLab here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Michael Yang
+ * @11/12/2021
  */
 import java.awt.*;
 import java.util.*;
@@ -20,22 +21,57 @@ public class SheparFaireyLab
         
          //opens selfie picture 
           /**/
-         String fileName = FileChooser.pickAFile();
-         Picture pictObj = new Picture(fileName);
-         pictObj.explore();
+         Picture face = new Picture("images/shepard.jpg");
+         face.explore();
          
-         //relative path
-         Picture apic = new Picture("images\\beach.jpg");
+         Pixel pixels [] = face.getPixels();
+         
          //change with selfie picture
-         Picture me = new Picture("images/beach.jpg");
-         Picture me1 = new Picture("images/beach.jpg");
-         Picture me2 = new Picture("images/beach.jpg");
+         Picture me = new Picture("images/shepard.jpg");
+         Picture me1 = new Picture("images/shepard.jpg");
+         Picture me2 = new Picture("images/shepard.jpg");
          
-         /**
-          * method 1 change
-          * 
-          */
          
+         //method 1 change
+          
+         for (Pixel spot : pixels) {
+             int r = spot.getRed();
+             int g = spot.getGreen();
+             int b = spot.getBlue();
+             
+             Color darkBlue = new Color(10,42,43);
+             Color medBlue = new Color(101,147,160);
+             Color lightBlue = new Color(185,204,184);
+             Color yellow = new Color(255,239,167);
+             Color red = new Color(219,21,34);
+             
+             int average = (int) (r+b+g)/3;
+             
+             if (average <= 51) 
+                spot.setColor(darkBlue); 
+            
+            
+             else if (average <= 102) 
+                spot.setColor(medBlue);
+            
+            
+             else if (average <= 153) 
+                spot.setColor(lightBlue);
+            
+            
+             else if (average <= 204)
+                 spot.setColor(yellow);
+                
+             else if (average <= 255) 
+                 spot.setColor(red);
+                
+             
+                }    
+             
+         face.explore();
+   
+             
+             
          /**
           * method 2 change
           * 
@@ -48,3 +84,4 @@ public class SheparFaireyLab
          
     }//main       
 }//class
+
