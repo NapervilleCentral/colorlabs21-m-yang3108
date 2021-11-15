@@ -39,6 +39,49 @@ public class SheparFaireyLab
              int g = spot.getGreen();
              int b = spot.getBlue();
              
+             Color lightgreen = new Color(199,223,137);
+             Color lightyellow = new Color(242,190,87);
+             Color lightblue = new Color(104,121,159);
+             Color pink = new Color(189,116,159);
+             
+             int average = (int) (r+b+g)/3;
+             
+             if (average <= 63) 
+                spot.setColor(lightgreen); 
+            
+            
+             else if (average <= 127) 
+                spot.setColor(lightyellow);
+            
+            
+             else if (average <= 191) 
+                spot.setColor(lightblue);
+            
+            
+             else if (average <= 255)
+                 spot.setColor(pink);
+                
+             
+                }    
+             
+         face.explore();
+   
+             
+             
+         /**
+          * method 2 change
+          * 
+          */
+         
+         
+         //custom color palette
+         
+         /**          
+         for (Pixel spot : pixels) {
+             int r = spot.getRed();
+             int g = spot.getGreen();
+             int b = spot.getBlue();
+             
              Color darkBlue = new Color(10,42,43);
              Color medBlue = new Color(101,147,160);
              Color lightBlue = new Color(185,204,184);
@@ -69,18 +112,8 @@ public class SheparFaireyLab
                 }    
              
          face.explore();
-   
-             
-             
-         /**
-          * method 2 change
-          * 
-          */
-         
-         /**
-          * custom color palette
-          */
-
+          
+*/
          
     }//main       
 }//class
