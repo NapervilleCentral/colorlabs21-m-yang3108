@@ -2,5 +2,5 @@
 comment0.target=SheparFaireyLab
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment1.text=\r\n\ main\ method,\ to\ test\ the\ picture\r\n\ \ \r\n
+comment1.text=\r\n\ Picture\ face0\ \=\ new\ Picture("images/shepard2.jpg");\ //opens\ the\ original\ picture\r\n\ face0.explore();\r\n\ \ \r\n
 numComments=2
