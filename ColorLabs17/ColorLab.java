@@ -18,7 +18,7 @@ public class ColorLab
         Pixel [] pixels = swan.getPixels(); 
         
         
-        for (Pixel spot : pixels)
+        for (Pixel spot : pixels) //sets all three colors to the maximum possible value (white)
         {
             int r = spot.getRed();
             int g = spot.getGreen();
@@ -35,7 +35,7 @@ public class ColorLab
         pixels = swan.getPixels(); 
         
         
-        for ( Pixel spot : pixels)
+        for ( Pixel spot : pixels) //creates a negated inverted colorway
         {
             int number = 0;
             spot.setRed(255-spot.getRed());
@@ -50,7 +50,7 @@ public class ColorLab
          swan = new Picture("images/swan.jpg");
          pixels = swan.getPixels(); 
         
-        for ( Pixel spot : pixels)
+        for ( Pixel spot : pixels) //increases the factor of each color by 2
         {
             int r = spot.getRed();
             int g = spot.getGreen();
@@ -81,7 +81,7 @@ public class ColorLab
         swan = new Picture("images/swan.jpg");
         pixels = swan.getPixels(); 
         
-        for ( Pixel spot : pixels)
+        for ( Pixel spot : pixels) //sets the colorway to be grayscale
         {
             int r = spot.getRed();
             int g = spot.getGreen();
@@ -101,7 +101,7 @@ public class ColorLab
         swan = new Picture("images/swan.jpg");
         pixels = swan.getPixels();
         
-        for (Pixel spot : pixels)
+        for (Pixel spot : pixels) //darkens the image as each color is multipoled by a factor of 0l1
         {
             int r = spot.getRed();
             int g = spot.getGreen();
@@ -123,7 +123,7 @@ public class ColorLab
     swan = new Picture("images/swan.jpg");
         pixels = swan.getPixels();
         
-        for (Pixel spot : pixels)
+        for (Pixel spot : pixels) //lightens the image as each color's factor is increased to make it lighter
         {
             int r = spot.getRed();
             int g = spot.getGreen();
@@ -146,7 +146,7 @@ public class ColorLab
        swan = new Picture("images/swan.jpg");
         pixels = swan.getPixels();
         
-        for (Pixel spot : pixels)
+        for (Pixel spot : pixels) //swaps the colors
         {
             int r = spot.getRed();
             int g = spot.getGreen();
@@ -161,7 +161,7 @@ public class ColorLab
    swan = new Picture("images/swan.jpg");
         pixels = swan.getPixels();
         
-        for (Pixel spot : pixels)
+        for (Pixel spot : pixels) //swaps the colors
         {
             int r = spot.getRed();
             int g = spot.getGreen();
