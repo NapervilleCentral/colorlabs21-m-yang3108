@@ -20,9 +20,9 @@ public class SheparFaireyLab
     {
         
           
-         Picture face1 = new Picture("images/shepard2.jpg");  //creates the picture for the first method    
-         Picture face2 = new Picture("images/shepard2.jpg");  //creates the picture for the first method    
-         Picture face3 = new Picture("images/shepard2.jpg");  //creates the picture for the first method          
+         Picture face1 = new Picture("images/jeremy.jpg");  //creates the picture for the first method    
+         Picture face2 = new Picture("images/jeremy.jpg");  //creates the picture for the first method    
+         Picture face3 = new Picture("images/jeremy.jpg");  //creates the picture for the first method          
          
          Pixel pixels1 [] = face1.getPixels(); 
          Pixel pixels2 [] = face2.getPixels();
