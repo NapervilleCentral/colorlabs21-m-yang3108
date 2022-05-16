@@ -1,18 +1,11 @@
-
-/**
- * Takes an image and creates custom colors.
- * @Michael Yang
- * @11/12/2021
- */
 import java.awt.*;
 import java.util.*;
 import java.util.List;
 
 /**
- * Write a description of class Poster here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Michael Yang
+ * 5/16/22
+ * Creates a 6 collage poster of the designated picture with various methods
  */
 public class Poster
 {
@@ -20,17 +13,22 @@ public class Poster
     private int x;
     private int r, g, b;
 
-    /**c
+    /**
      * Constructor for objects of class Poster
      */
     public static void main (String [] args)
     {
         Picture apic = new Picture("images\\jeremy.jpg");
-
-        apic.explore();
-        grayscale(apic);
-        apic.explore();
-        Pixel pixel[] = apic.getPixels(); 
+        //creates a 3x2 collage of the poster by creating a new picture
+        Picture poster = new Picture(apic.getWidth() * 3, apic.getHeight() * 2);
+        for (int y = 0; y < poster.getHeight(); y++)
+            for (int x = 0; x < poster.getWidth(); x++)
+            {
+                poster.getPixel(x, y).setColor(apic.getPixel(x % apic.getWidth(), y % apic.getHeight()).getColor());   
+            }
+        negated(poster);    
+        grayscale(poster);
+        poster.explore();
     }
 
     public static void grayscale(Picture s)
@@ -58,6 +56,33 @@ public class Poster
             }    
 
         }
-
     }
+
+    public static void negated(Picture s)
+    {
+        int height = s.getHeight();
+        int width = s.getWidth();
+
+        Pixel target = null;
+        Pixel source = null;
+
+        for (int r = 0; r < width; r++)
+        {
+            for (int c = 0; c < height; c++)
+            {
+                
+                
+                source = s.getPixel(r,c);
+                int r1 = source.getRed();
+                int g1 = source.getGreen();
+                int b1 = source.getBlue();
+                source.setColor(new Color(255-r1, 255-g1, 255-b1));
+
+            }    
+
+        }
+    }
+    
+    public static void 
+    
 }

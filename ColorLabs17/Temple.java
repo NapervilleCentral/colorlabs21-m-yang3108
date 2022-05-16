@@ -1,4 +1,6 @@
-
+import java.awt.*;
+import java.util.*;
+import java.util.List;
 /**
  * Michael Yang
  * 5/9/22
@@ -9,12 +11,13 @@ public class Temple
     // instance variables - replace the example below with your own
     private int mirrorpaint;
 
-    /**
-     * Constructor for objects of class Temple
-     */
-    public Temple()
+    public static void main (String [] args)
     {
-        // initialise instance variables
+
+        Picture apic = new Picture("images/temple.jpg");
+        mirrorTemple(apic);
+
+        apic.explore();
     }
 
     /**
@@ -23,24 +26,28 @@ public class Temple
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int mirrorTemple(Picture apic)
+    public static void mirrorTemple(Picture apic)
     {
-        apic = new Picture("images/temple.jpg");
-        Pixel [] pixel = apic.getPixels();
+        //creates variables for height and the center point of the collosium
+        int center = 277;
+        int height = 145;
+        int width = center * 2;
         
-        int width = apic.getWidth(), height = 145;
-        mirrorpaint = 277;
-        for (int i = 0; i<mirrorpaint; i++)
+        //creates 2 for loops to create an array that goes through each pixel
+        //sets the left pixel to the right pixel to mirror
+        for (int y = 0; y < height; y++)
         {
-            for (int j = 0; i < height; j++)
+            for (int x = 0; x < center; x++)
 
             {
-                pixel.leftPixel = apic.getPixel(i, j);
-                rightpixel = apic.getPixel();
+                Pixel leftPixel = apic.getPixel(x, y);
+                Pixel rightPixel = apic.getPixel(width-x, y);
+                Pixel temp = apic.getPixel(width-x, y);
                 rightPixel.setColor(leftPixel.getColor());
+                leftPixel.setColor(temp.getColor());
 
             }
         }
-        apic.explore();
+
     }
 }

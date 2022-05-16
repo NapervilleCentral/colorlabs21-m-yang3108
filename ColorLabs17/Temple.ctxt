@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Temple
+comment0.text=\r\n\ Michael\ Yang\r\n\ 5/9/22\r\n\ Fixing\ the\ temple\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=apic
+comment2.target=void\ mirrorTemple(Picture)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+numComments=3
