@@ -18,7 +18,7 @@ public class Poster
      */
     public static void main (String [] args)
     {
-        Picture apic = new Picture("images\\jeremy.jpg");
+        Picture apic = new Picture("images\\streets.jpg");
         //creates a 3x2 collage of the poster by creating a new picture
         Picture poster = new Picture(apic.getWidth() * 3, apic.getHeight() * 2);
         for (int y = 0; y < poster.getHeight(); y++)
@@ -28,6 +28,7 @@ public class Poster
             }
         negated(poster);    
         grayscale(poster);
+        mirror(poster,  apic.getWidth(), 0, apic.getWidth(), apic.getHeight());
         poster.explore();
     }
 
@@ -58,7 +59,7 @@ public class Poster
         }
     }
 
-    public static void negated(Picture s)
+    public static void negated(Picture s, int startX, int startY, int w, int h )
     {
         int height = s.getHeight();
         int width = s.getWidth();
@@ -83,6 +84,26 @@ public class Poster
         }
     }
     
-    public static void 
+    public static void mirror(Picture p, int startX, int startY, int w, int h)
+    {
+        
+        for (int y = startY; y < startY+h; y++)
+        {
+            for (int x = startX; x < startX+w; x++)
+
+            {
+                Pixel leftPixel = p.getPixel(x, y);
+                Pixel rightPixel = p.getPixel(startX + w-x, y);
+                Pixel temp = p.getPixel(startX + w-x, y);
+                rightPixel.setColor(leftPixel.getColor());
+                leftPixel.setColor(temp.getColor());
+
+            }
+        }
+
+        
+        
+        
+    }
     
 }
