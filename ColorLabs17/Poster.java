@@ -27,16 +27,21 @@ public class Poster
             for (int x = 0; x < poster.getWidth(); x++)
             {
                 poster.getPixel(x, y).setColor(apic.getPixel(x % apic.getWidth(), y % apic.getHeight()).getColor());   
+
             }
-        //negated(poster, 0, 0, apic.getWidth(), apic.getHeight());    
-        //grayscale(poster, apic.getWidth() * 2, apic.getHeight() * 2, apic.getWidth(), apic.getHeight());
+
+        negated(poster, 0, 0, apic.getWidth(), apic.getHeight());    
+        grayscale(poster, apic.getWidth() * 2, apic.getHeight() * 2, apic.getWidth(), apic.getHeight());
         mirror(poster,  apic.getHeight(), apic.getWidth(), apic.getHeight(), apic.getWidth());
         posterize(poster, 0, 0, apic.getHeight(), apic.getWidth());
         poster.explore();
     }
+
     /**
      * Grayscale method
-     * uses 
+     * uses for loops to create an array of pixels
+     * finds the red, green, and blue pixels and sets the colors to the average
+     * this creates a grayscale
      */
     public static void grayscale(Picture s, int startX, int startY, int w, int h )
     {
@@ -89,9 +94,9 @@ public class Poster
         }
     }
 
-    public static void mirror(Picture p, int startX, int startY, int w, int h)
+    public static void mirror(Picture p, int startX, int startY, int center, int h)
     {
-
+        int w = center * 2;
         for (int y = startY; y < startY+h; y++)
         {
             for (int x = startX; x < startX+w; x++)
@@ -108,13 +113,29 @@ public class Poster
 
     }
 
-    public static void upsidedown(Picture p, int startX, int startY, int w, int h)
+    public static void scale(Picture p, int startX, int startY, int w, int h)
     {
+        for (int y = startY; y < startY+h; y++)
+        {
+            for (int x = startX; x < startX+w; x++)
 
+            {
+                Pixel leftPixel = p.getPixel(x, y);
+                Pixel rightPixel = p.getPixel(startX + w-x, y);
+                Pixel temp = p.getPixel(startX + w-x, y);
+                rightPixel.setPixel(leftPixel.getColor());
+                leftPixel.setColor(temp.getColor());
+
+            }
+        }
     }
 
     public static void recursion(Picture p, int startX, int startY, int w, int h)
     {
+        if (x == 0)
+        {
+            
+        }
 
     }
 
