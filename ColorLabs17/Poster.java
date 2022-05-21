@@ -47,7 +47,7 @@ public class Poster
         copyTo(mirror, canvas, 0, 1194);
         canvas.explore();
         
-        canvas.write("\\images\\poster.jpg");
+        canvas.write("images\\poster.jpg");
     }
     
     /**
