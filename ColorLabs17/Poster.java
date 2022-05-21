@@ -6,6 +6,7 @@ import java.util.List;
  * Michael Yang
  * 5/16/22
  * Creates a 6 collage poster of the designated picture with various methods
+ * See Poster Description txt document for detailed description of each section of the collage
  */
 public class Poster
 {
@@ -20,156 +21,207 @@ public class Poster
      */
     public static void main (String [] args)
     {
-        Picture apic = new Picture("images\\spongebob.jpg");
-        //creates a 3x2 collage of the poster by creating a new picture
-        Picture poster = new Picture(apic.getWidth() * 3, apic.getHeight() * 2);
-        for (int y = 0; y < poster.getHeight(); y++)
-            for (int x = 0; x < poster.getWidth(); x++)
+        //creates the 6 images and the canvas needed for the poster
+        Picture original = new Picture("images\\patrick1.jpg");
+        Picture negated = new Picture("images\\patrick1.jpg");
+        Picture recursion = new Picture("images\\patrick1.jpg");
+        Picture grayscale = new Picture("images\\patrick1.jpg");
+        Picture posterize = new Picture("images\\patrick1.jpg");
+        Picture mirror = new Picture("images\\patrick1.jpg");
+        Picture canvas = new Picture("images\\c.jpg");
+        
+        //calls each method
+        negated(negated);
+        recursion(recursion, 10);
+        grayscale(grayscale);
+        posterize(posterize);
+        mirror(mirror);
+        
+        //uses the copyTo method to put the individual Patricks onto the canvas in a collage
+
+        copyTo(original, canvas, 0, 0);
+        copyTo(negated, canvas, 796, 0);
+        copyTo(recursion, canvas, 796, 1194);
+        copyTo(grayscale, canvas, 0, 597);
+        copyTo(posterize, canvas, 796, 597);
+        copyTo(mirror, canvas, 0, 1194);
+        canvas.explore();
+        
+        canvas.write("\\images\\poster.jpg");
+    }
+    
+    /**
+     * CopyTo method used to transfer the pixels onto the canvas in the collage format using the given 
+     * x and y coordinates, and the desired picture
+     */
+
+    public static void copyTo(Picture s, Picture t, int x, int y)
+    {
+        int height = s.getHeight() - 1;
+        int width = s.getWidth() - 1;
+
+        Pixel target = null;
+        Pixel source = null; 
+
+        for (int r = 0; r < width; r++)
+        {
+            for (int c = 0; c < height; c++)
             {
-                poster.getPixel(x, y).setColor(apic.getPixel(x % apic.getWidth(), y % apic.getHeight()).getColor());   
-
+                source = s.getPixel(r,c);
+                target = t.getPixel(r+x,c+y);
+                target.setColor(source.getColor());
             }
+        }
 
-        negated(poster, 0, 0, apic.getWidth(), apic.getHeight());    
-        grayscale(poster, apic.getWidth() * 2, apic.getHeight() * 2, apic.getWidth(), apic.getHeight());
-        mirror(poster,  apic.getHeight(), apic.getWidth(), apic.getHeight(), apic.getWidth());
-        posterize(poster, 0, 0, apic.getHeight(), apic.getWidth());
-        poster.explore();
     }
 
     /**
      * Grayscale method
-     * uses for loops to create an array of pixels
+     * uses for each loop to create an array of pixels
      * finds the red, green, and blue pixels and sets the colors to the average
      * this creates a grayscale
      */
-    public static void grayscale(Picture s, int startX, int startY, int w, int h )
+    public static void grayscale(Picture p)
     {
-        int height = s.getHeight();
-        int width = s.getWidth();
 
-        Pixel target = null;
-        Pixel source = null;
+        Pixel[] pixels = p.getPixels();
 
-        for (int r = startY; r < startY+h; r++)
+        for (Pixel spot : pixels)
         {
-            for (int c = startX; c < startX+w; c++)
-            {
-                source = s.getPixel(r,c);
-                int r1 = source.getRed();
-                int g1 = source.getGreen();
-                int b1 = source.getBlue();
-                int average = (int) (r1+b1+g1)/3;
-                int small = 255;
-                int big = 0;
+            int r1 = spot.getRed();
+            int g1 = spot.getGreen();
+            int b1 = spot.getBlue();
+            int average = (int) (r1+b1+g1)/3;
+            int small = 255;
+            int big = 0;
 
-                source.setColor(new Color(average, average, average));
+            spot.setColor(new Color(average, average, average));
 
-            }    
-
-        }
+        }    
     }
 
-    public static void negated(Picture s, int startX, int startY, int w, int h )
+    /**
+     * Negated method
+     * uses for each loop to create an array of pixels
+     * finds the red, green, and blue pixels and sets the colors to the average
+     * subtracts those values from 255 to create an inverse RGB color pallete
+     */
+
+    public static void negated(Picture p)
     {
-        int height = s.getHeight();
-        int width = s.getWidth();
+        Pixel[] pixel1 = p.getPixels();
 
-        Pixel target = null;
-        Pixel source = null;
-
-        for (int r = startY; r < startY + h; r++)
+        for(Pixel s: pixel1)
         {
-            for (int c = startX; c < startX+w; c++)
-            {
+            int r1 = s.getRed();
+            int g1 = s.getGreen();
+            int b1 = s.getBlue();
+            s.setColor(new Color(255-r1, 255-g1, 255-b1));
 
-                source = s.getPixel(r,c);
-                int r1 = source.getRed();
-                int g1 = source.getGreen();
-                int b1 = source.getBlue();
-                source.setColor(new Color(255-r1, 255-g1, 255-b1));
+        }    
 
-            }    
-
-        }
     }
 
-    public static void mirror(Picture p, int startX, int startY, int center, int h)
-    {
-        int w = center * 2;
-        for (int y = startY; y < startY+h; y++)
-        {
-            for (int x = startX; x < startX+w; x++)
+    
+    /**
+     * Mirror method
+     * uses for each loops to create an array of pixels
+     * uses for loops to mirror on the y axis vertically
+     * by setting the left pixel to the right pixel and vice versa
+     */
 
+    public static void mirror(Picture p)
+    {
+        Pixel[] pixel2 = p.getPixels();
+        int height = p.getHeight() - 1;
+        int width = p.getWidth() - 1;
+        for (int r = 0; r < width/2; r++)
+        {  
+            for (int c = 0; c < height; c++)
             {
-                Pixel leftPixel = p.getPixel(x, y);
-                Pixel rightPixel = p.getPixel(startX + w-x, y);
-                Pixel temp = p.getPixel(startX + w-x, y);
+                Pixel leftPixel = p.getPixel(r, c);
+                Pixel rightPixel = p.getPixel(width-r, c);
+                Pixel temp =  p.getPixel(width-r, c);
                 rightPixel.setColor(leftPixel.getColor());
                 leftPixel.setColor(temp.getColor());
 
             }
         }
-
     }
+    
+    /**
+     * Recursive Method
+     * @param allows the user to input a picture and a recursive value that changes by 0.9x until the
+     * base case is reached
+     * uses for loops to find the color then multiples by a factor of 0.8 to change the size and position
+     * of the patricks until the base case is reached
+     */
 
-    public static void scale(Picture p, int startX, int startY, int w, int h)
+    public static void recursion(Picture p, int x)
     {
-        for (int y = startY; y < startY+h; y++)
+        int h = p.getHeight();
+        int w = p.getWidth();
+        Pixel source = null; 
+        Pixel temp = null;
+
+        for (int r = 0; r < w; r++)
         {
-            for (int x = startX; x < startX+w; x++)
-
+            for (int c = 0; c < h; c++)
             {
-                Pixel leftPixel = p.getPixel(x, y);
-                Pixel rightPixel = p.getPixel(startX + w-x, y);
-                Pixel temp = p.getPixel(startX + w-x, y);
-                rightPixel.setPixel(leftPixel.getColor());
-                leftPixel.setColor(temp.getColor());
+                source = p.getPixel(r,c);
 
+                int r5 = source.getRed();
+                int g5 = source.getGreen();
+                int b5 = source.getBlue();
+
+                temp = p.getPixel((int)(r*0.8),(int)(c*0.8));
+
+                temp.setRed(r5);
+                temp.setGreen(g5);
+                temp.setBlue(b5);
             }
         }
-    }
-
-    public static void recursion(Picture p, int startX, int startY, int w, int h)
-    {
-        if (x == 0)
-        {
-            
-        }
+        x *= 0.9;
+        if (x > 5)
+            recursion(p, x);
 
     }
 
-    public static void posterize (Picture p, int startX, int startY, int w, int h)
+    /**
+     * Posterize method
+     * uses a for each loop to find each pixel's color, and changes it to a possible 5 different colors
+     * creating a posterized effect
+     */
+    public static void posterize (Picture p)
     {
-        Pixel source = null;
-        for (int y = startY; y < startY+h; y++)
+        Pixel[] pixel3 = p.getPixels();
+        
+        for (Pixel spot : pixel3)
         {
-            for (int x = startX; x < startX+w; x++)
+            Color darkBlue = new Color(10,42,43); //creates the designated color pallet
+            Color medBlue = new Color(101,147,160);
+            Color lightBlue = new Color(185,204,184);
+            Color yellow = new Color(255,239,167);
+            Color red = new Color(219,21,34);
+ 
+            int r2 = spot.getRed();
+            int g2 = spot.getGreen();
+            int b2 = spot.getBlue();
 
-            {
-                Color darkBlue = new Color(10,42,43); //creates the designated color pallet
-                Color medBlue = new Color(101,147,160);
-                Color lightBlue = new Color(185,204,184);
-                Color yellow = new Color(255,239,167);
-                Color red = new Color(219,21,34);
-                source = p.getPixel(y,x);
-                int r2 = source.getRed();
-                int g2 = source.getGreen();
-                int b2 = source.getBlue();
+            int average = (int) (r2+b2+g2)/3; //sets the average (grayscale)
 
-                int average = (int) (r2+b2+g2)/3; //sets the average (grayscale)
-
-                if (average <= 51) //divides the spectrum into 5 quadrants, and sets a designated color for each quadrant
-                    source.setColor(darkBlue); 
-                else if (average <= 102) 
-                    source.setColor(medBlue);
-                else if (average <= 153) 
-                    source.setColor(lightBlue);
-                else if (average <= 204)
-                    source.setColor(yellow);
-                else if (average <= 255) 
-                    source.setColor(red);
-            }
+            if (average <= 51) //divides the spectrum into 5 quadrants, and sets a designated color for each quadrant
+                spot.setColor(darkBlue); 
+            else if (average <= 102) 
+                spot.setColor(medBlue);
+            else if (average <= 153) 
+                spot.setColor(lightBlue);
+            else if (average <= 204)
+                spot.setColor(yellow);
+            else if (average <= 255) 
+                spot.setColor(red);
         }
     }
 }
+
+

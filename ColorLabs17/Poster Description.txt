@@ -1,0 +1,6 @@
+Top Left: Original Picture
+Top Right: Negated (Inverse Colorway) Picture
+Middle Left: Black and White Picture
+Middle Right: Posterized Picture
+Bottom Left: Mirrored Picture
+Bottom Right: Recursive Picture
